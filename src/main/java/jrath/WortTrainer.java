@@ -75,7 +75,7 @@ public class WortTrainer {
      */
     public boolean check(String word, int index) {
         anzahlFragen++;
-        if(wordList.returnArray(index).getWord().equals(word)) {
+        if(wordList.getEntry(index).getWord().equals(word)) {
             right++;
             return true;
         }
@@ -89,7 +89,7 @@ public class WortTrainer {
      */
     public boolean checkIgnoreCase(String wort, int index) {
         anzahlFragen++;
-        if(this.wordList.returnArray(index).getWord().toLowerCase().equals(wort.toLowerCase())) {
+        if(this.wordList.getEntry(index).getWord().toLowerCase().equals(wort.toLowerCase())) {
             right++;
             return true;
         }

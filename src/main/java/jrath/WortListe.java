@@ -49,7 +49,7 @@ public class WortListe {
      * @param index
      * @return
      */
-    public WortEintrag returnArray(int index){
+    public WortEintrag getEntry(int index){
         if (index >= 0 && index <= wordEntry.length) {
             return wordEntry[index];
         }

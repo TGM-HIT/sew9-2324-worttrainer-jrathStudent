@@ -59,16 +59,13 @@ public class SafeLoad implements SLInterface{
      * @throws IOException
      */
     public void laden(String filename) throws IOException {
-        Scanner reader = new Scanner(new BufferedReader(new FileReader(filename)));
-        try {
+        try(Scanner reader = new Scanner(new BufferedReader(new FileReader(filename)))) {
             int fragen = Integer.parseInt(reader.nextLine());
             int richtige = Integer.parseInt(reader.nextLine());
             int falsche = Integer.parseInt(reader.nextLine());
             trainer.addVersuche(fragen);
             trainer.addRichtig(richtige);
             trainer.addWrong(falsche);
-        } finally {
-            reader.close();
         }
     }
 
